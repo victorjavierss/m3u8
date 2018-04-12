@@ -234,6 +234,19 @@ func (p *MasterPlaylist) Encode() *bytes.Buffer {
 				p.buf.WriteString(pl.Subtitles)
 				p.buf.WriteRune('"')
 			}
+			if pl.Captions != "" {
+				p.buf.WriteString(",CLOSED-CAPTIONS=")
+
+				if pl.Captions != "NONE" {
+					p.buf.WriteRune('"')
+				}
+
+				p.buf.WriteString(pl.Captions)
+
+				if pl.Captions != "NONE" {
+					p.buf.WriteRune('"')
+				}
+			}
 			if pl.Name != "" {
 				p.buf.WriteString(",NAME=\"")
 				p.buf.WriteString(pl.Name)

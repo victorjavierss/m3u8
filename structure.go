@@ -64,6 +64,10 @@ const (
 	VOD
 )
 
+const (
+	NO_CC = "NONE"
+)
+
 /*
  This structure represents a single bitrate playlist aka media playlist.
  It related to both a simple media playlists and a sliding window media playlists.
